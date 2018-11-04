@@ -10,7 +10,7 @@ export const searchTodo = search => {
         dispatch({ type: FETCHTODO, payload: response.data });
       })
       .catch(err => {
-        dispatch({ type: ERROR });
+        dispatch({ type: ERROR, message: err.message });
       });
   };
 };

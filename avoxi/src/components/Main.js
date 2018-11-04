@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { searchTodo } from "../actions/index";
 import { connect } from "react-redux";
-
+import Table from "./Table";
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -14,14 +14,12 @@ class Main extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   search = () => {
-    const Do = {
-      search: this.state.search
-    };
-    this.props.searchTodo(Do);
+    const { search } = this.state;
+    this.props.searchTodo({ search });
     this.setState({ search: "" });
   };
   render() {
-    const { search } = this.state;
+    const { search, movies } = this.state;
     return (
       <div className="App">
         <input
@@ -32,6 +30,7 @@ class Main extends Component {
           onChange={this.handleTextInput}
         />
         <button onClick={this.search}>Search</button>
+        <Table movies={movies} />
       </div>
     );
   }
