@@ -12,19 +12,7 @@ export default (state = initialState, action) => {
           ...state,
           movies: action.payload.Search
         };
-      } else
-        return {
-          ...state,
-          movies: [
-            {
-              Title: "Too Few or Too many movies found try again",
-              Year: "Now",
-              imdbID: "None",
-              Type: "Nonexistent",
-              Poster: "No Poster found"
-            }
-          ]
-        };
+      }
     case ERROR:
       return {
         ...state,
