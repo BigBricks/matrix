@@ -20,10 +20,10 @@ export default (state = initialState, action) => {
         movies: [
           {
             Title: action.payload.Error,
-            Year: "Now",
-            imdbID: "None",
-            Type: "Nonexistent",
-            Poster: "No Poster found"
+            Year: "N/A",
+            imdbID: "N/A",
+            Type: "N/A",
+            Poster: "N/A"
           }
         ]
       };
