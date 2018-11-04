@@ -7,7 +7,6 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import Table2 from "./Table";
 class Main extends Component {
   state = {
     movies: [],
@@ -18,38 +17,6 @@ class Main extends Component {
   }
   handleTextInput = e => {
     this.setState({ [e.target.name]: e.target.value });
-  };
-  renderTable = () => {
-    console.log(this.state.movies);
-    return this.state.movies.map(value => {
-      return (
-        <div>
-          BOb
-          <table>
-            <tr>
-              <td>Title</td>
-              <td>{value.Title}</td>
-            </tr>
-            <tr>
-              <td>Year</td>
-              <td>{value.Year}</td>
-            </tr>
-            <tr>
-              <td>imdbID</td>
-              <td>{value.imdbID}</td>
-            </tr>
-            <tr>
-              <td>Type</td>
-              <td>{value.Type}</td>
-            </tr>
-            <tr>
-              <td>Poster</td>
-              <td>{value.Poster}</td>
-            </tr>
-          </table>
-        </div>
-      );
-    });
   };
   search = () => {
     const { search } = this.state;
@@ -62,6 +29,7 @@ class Main extends Component {
     return (
       <div className="App">
         <input
+          className="searchBar"
           type="text"
           value={search}
           name="search"
@@ -69,32 +37,34 @@ class Main extends Component {
           onChange={this.handleTextInput}
         />
         <button onClick={this.search}>Search</button>
-        <Table2 data={movies} />
-        {/* <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Title</TableCell>
-              <TableCell>Year</TableCell>
-              <TableCell>imdbID</TableCell>
-              <TableCell>Type</TableCell>
-              <TableCell>Poster</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {movies.map((row, index) => {
-              return (
-                <TableRow key={row.Title}>
-                  <TableCell>{row.Title}</TableCell>
-                  <TableCell>{row.Year}</TableCell>
-                  <TableCell>{row.imdbID}</TableCell>
-                  <TableCell>{row.Type}</TableCell>
-                  <TableCell>{row.Poster}</TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table> */}
-        {/* {this.renderTable()} */}
+        <Paper className="tablePage">
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Title</TableCell>
+                <TableCell>Year</TableCell>
+                <TableCell>imdbID</TableCell>
+                <TableCell>Type</TableCell>
+                <TableCell>Poster</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.props.movies.map((row, index) => {
+                return (
+                  <TableRow key={row.Title}>
+                    <TableCell>{row.Title}</TableCell>
+                    <TableCell>{row.Year}</TableCell>
+                    <TableCell>{row.imdbID}</TableCell>
+                    <TableCell>{row.Type}</TableCell>
+                    <TableCell>
+                      <a href={row.Poster}>{row.Poster}</a>
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Paper>
       </div>
     );
   }

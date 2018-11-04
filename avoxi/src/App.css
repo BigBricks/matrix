@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: black;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -17,9 +19,16 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.searchBar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .App-link {
   color: #61dafb;
+}
+.tablePage {
+  margin: 0 2rem 0 2rem;
 }
 
 @keyframes App-logo-spin {
