@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { searchTodo } from "./actions";
-import { connect } from "react-red";
+import { connect } from "react-redux";
 
 class App extends Component {
   state = {
@@ -17,6 +17,7 @@ class App extends Component {
     this.setState({ search: "" });
   }
   render() {
+    const { search } = this.state;
     return (
       <div className="App">
         <input
