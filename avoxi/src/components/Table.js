@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import "../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css";
 
-class Table extends Component {
+class Table2 extends Component {
   render() {
     return (
       <div>
-        <BootstrapTable movies={this.props.movies}>
+        <BootstrapTable data={this.props.movies}>
           <TableHeaderColumn dataField="Title">Title</TableHeaderColumn>
           <TableHeaderColumn dataField="Year">Year</TableHeaderColumn>
 
@@ -20,4 +20,4 @@ class Table extends Component {
     );
   }
 }
-export default Table;
+export default Table2;

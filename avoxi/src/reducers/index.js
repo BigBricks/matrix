@@ -1,16 +1,11 @@
 import { FETCHTODO, ERROR } from "../actions";
 
-const initialState = {
-  movies: [],
-  search: ""
-};
-
-export default (state = initialState, action) => {
+export default (state, action) => {
   switch (action.type) {
     case FETCHTODO:
       return {
         ...state,
-        movies: [action.payload]
+        movies: [...action.payload]
       };
     case ERROR:
       return {
