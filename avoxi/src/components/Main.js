@@ -27,10 +27,6 @@ class Main extends Component {
     const { search } = this.state;
     return (
       <div className="App">
-        <h2 className="headerApp">
-          If nothing shows up that means that omdb responded with an error due
-          to too many/few options or being unable to find the movie in question
-        </h2>
         <input
           pattern=".{3,}"
           required

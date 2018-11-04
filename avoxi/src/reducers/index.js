@@ -7,7 +7,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case FETCHTODO:
-      if (action.payload.Search.response !== true) {
+      if (action.payload.Search) {
         return {
           ...state,
           movies: action.payload.Search
@@ -16,7 +16,16 @@ export default (state = initialState, action) => {
     case ERROR:
       return {
         ...state,
-        error: "Did not fetch"
+        error: "Did not fetch",
+        movies: [
+          {
+            Title: action.payload.Error,
+            Year: "Now",
+            imdbID: "None",
+            Type: "Nonexistent",
+            Poster: "No Poster found"
+          }
+        ]
       };
     default:
       return state;
