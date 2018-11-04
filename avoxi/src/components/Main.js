@@ -27,7 +27,14 @@ class Main extends Component {
     const { search } = this.state;
     return (
       <div className="App">
+        <h2 className="headerApp">
+          If nothing shows up that means that omdb responded with an error due
+          to too many/few options or being unable to find the movie in question
+        </h2>
         <input
+          pattern=".{3,}"
+          required
+          title="3 characters minimum"
           className="searchBar"
           type="text"
           value={search}
@@ -56,7 +63,9 @@ class Main extends Component {
                     <TableCell>{row.imdbID}</TableCell>
                     <TableCell>{row.Type}</TableCell>
                     <TableCell>
-                      <a href={row.Poster}>{row.Poster}</a>
+                      <a href={row.Poster} className="postAnchor">
+                        {row.Poster}
+                      </a>
                     </TableCell>
                   </TableRow>
                 );
