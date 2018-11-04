@@ -5,7 +5,7 @@ export const ERROR = "ERROR";
 export const searchTodo = search => {
   return dispatch => {
     axios
-      .get(`http://www.omdbapi.com/?s=${search}&apikey=f86c0e32`)
+      .get(`http://www.omdbapi.com/?s=${search}&apikey=5379077d`)
       .then(response => {
         dispatch({ type: FETCHTODO, payload: response.data });
       })

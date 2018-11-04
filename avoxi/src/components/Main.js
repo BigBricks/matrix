@@ -13,6 +13,9 @@ class Main extends Component {
     movies: [],
     search: ""
   };
+  componentDidMount() {
+    console.log(this.state.movies);
+  }
   handleTextInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -55,7 +58,7 @@ class Main extends Component {
     console.log(this.state.movies);
   };
   render() {
-    const { search } = this.state;
+    const { search, movies } = this.state;
     return (
       <div className="App">
         <input
@@ -66,7 +69,7 @@ class Main extends Component {
           onChange={this.handleTextInput}
         />
         <button onClick={this.search}>Search</button>
-        {/* <Table data={movies} /> */}
+        <Table2 data={movies} />
         {/* <Table>
           <TableHead>
             <TableRow>
@@ -91,7 +94,7 @@ class Main extends Component {
             })}
           </TableBody>
         </Table> */}
-        {this.renderTable()}
+        {/* {this.renderTable()} */}
       </div>
     );
   }
