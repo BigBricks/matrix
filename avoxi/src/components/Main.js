@@ -20,12 +20,11 @@ class Main extends Component {
   };
   search = () => {
     const { search } = this.state;
-    this.props.searchTodo({ search });
-    this.setState({ search: "" });
+    this.props.searchTodo(search);
     console.log(this.state.movies);
   };
   render() {
-    const { search, movies } = this.state;
+    const { search } = this.state;
     return (
       <div className="App">
         <input
