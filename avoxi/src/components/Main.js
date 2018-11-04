@@ -9,13 +9,10 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Table2 from "./Table";
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: [],
-      search: ""
-    };
-  }
+  state = {
+    movies: [],
+    search: ""
+  };
   handleTextInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -23,28 +20,31 @@ class Main extends Component {
     console.log(this.state.movies);
     return this.state.movies.map(value => {
       return (
-        <table>
-          <tr>
-            <td>Title</td>
-            <td>{value.Title}</td>
-          </tr>
-          <tr>
-            <td>Year</td>
-            <td>{value.Year}</td>
-          </tr>
-          <tr>
-            <td>imdbID</td>
-            <td>{value.imdbID}</td>
-          </tr>
-          <tr>
-            <td>Type</td>
-            <td>{value.Type}</td>
-          </tr>
-          <tr>
-            <td>Poster</td>
-            <td>{value.Poster}</td>
-          </tr>
-        </table>
+        <div>
+          BOb
+          <table>
+            <tr>
+              <td>Title</td>
+              <td>{value.Title}</td>
+            </tr>
+            <tr>
+              <td>Year</td>
+              <td>{value.Year}</td>
+            </tr>
+            <tr>
+              <td>imdbID</td>
+              <td>{value.imdbID}</td>
+            </tr>
+            <tr>
+              <td>Type</td>
+              <td>{value.Type}</td>
+            </tr>
+            <tr>
+              <td>Poster</td>
+              <td>{value.Poster}</td>
+            </tr>
+          </table>
+        </div>
       );
     });
   };
@@ -55,7 +55,7 @@ class Main extends Component {
     console.log(this.state.movies);
   };
   render() {
-    const { search, movies } = this.state;
+    const { search } = this.state;
     return (
       <div className="App">
         <input

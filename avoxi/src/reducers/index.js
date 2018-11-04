@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
     case FETCHTODO:
       return {
         ...state,
-        movies: [...action.payload]
+        movies: action.payload.Search
       };
     case ERROR:
       return {
